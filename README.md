@@ -2,7 +2,7 @@
 # Evolution of trust
 ## Данный проект разрабатывался на Windows 10, Python 3.9.13
 ## Запуск результатов:
-запустить с помощью интерпретатора pyhton файл "start_game.py" :
+запустить с помощью интерпретатора pyhton файл "start_game.py" находясь в папке "src" :
 * ``` py start_game.py``` на Windows
 * ```python3 start_game.py``` на Mac Os, Linux
 
