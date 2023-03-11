@@ -1,16 +1,21 @@
 class Player:
+
     def __init__(self, name):
         self.name = name
+
     def answer(self, numOFMove, registry):
         if numOFMove == 1:
             return True
+
 
 class Cheater(Player):
 
     def __init__(self):
         super().__init__('cheater')
+
     def answer(self, numOFMove, registry):
         return False
+
 
 class Cooperator(Player):
 
@@ -20,11 +25,13 @@ class Cooperator(Player):
     def answer(self, numOFMove, registry):
         return True
 
+
 class Copycat(Player):
 
     def __init__(self):
         super().__init__('copycat')
         self.prevScore = 0
+
     def answer(self, numOFMove, registry):
         if numOFMove == 1:
             self.prevScore = registry[self.name]
@@ -33,6 +40,7 @@ class Copycat(Player):
             res = registry[self.name] - self.prevScore > 0
             self.prevScore = registry[self.name]
             return res
+
 
 class Grudger(Player):
 
@@ -79,17 +87,19 @@ class Detective(Player):
         self.prevScore = registry[self.name]
         return res
 
+
 class MyBehaviorType(Player):
     def __init__(self):
         super().__init__('myBehaviorType')
         self.countLie = 0
         self.flagTrust = True
+
     def answer(self, numOFMove, registry):
         if numOFMove == 1:
             self.prevScore = 0
             self.countLie = 0
             self.flagTrust = True
-            res =  True    
+            res = True
         else:
             if self.countLie > 0:
                 res = registry[self.name] - self.prevScore > 0

@@ -1,5 +1,5 @@
 from collections import Counter
-from players import *
+
 
 class Game(object):
 
@@ -34,4 +34,3 @@ class Game(object):
             print(listKey[listValue.index(max(listValue))], max(listValue))
             listKey.remove(listKey[listValue.index(max(listValue))])
             listValue.remove(max(listValue))
-            
